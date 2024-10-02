@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import user_passes_test
 
 # Check if the user is an Admin
 def is_admin(user):
-    return user.userprofile.role == 'Admin'
+     return user.is_authenticated and user.userprofile.role == 'Admin'
 
 # Check if the user is a Librarian
 def is_librarian(user):
